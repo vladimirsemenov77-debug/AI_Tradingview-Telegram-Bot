@@ -3,7 +3,18 @@ from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.chrome.options import Options
 import time
 import config
-from replit import db
+# Заглушка вместо replit.db (для работы вне Replit)
+class MockDB:
+    def __getitem__(self, key):
+        return None
+    def __setitem__(self, key, value):
+        pass
+    def __contains__(self, key):
+        return False
+    def get(self, key, default=None):
+        return default
+
+db = MockDB()
 from datetime import datetime
 from threading import Thread
 import telegrambot
