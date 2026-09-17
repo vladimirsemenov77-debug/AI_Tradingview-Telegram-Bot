@@ -18,7 +18,7 @@ db = MockDB()
 from datetime import datetime
 from threading import Thread
 import telegrambot
-from tkinter import Tk
+# from tkinter import Tk
 
 
 def setup():
